@@ -9,13 +9,17 @@ use Symfony\Component\Routing\Annotation\Route;
 class AccueilController extends AbstractController
 {
     /**
-     * @Route("/accueil", name="accueil")
+     * @Route("/", name="accueil")
      */
     public function index(ClientRepository $cr)
     {
+        //$clients = $cr->findAll();
+        //$clientsJs = json_encode($clients);
+        //dd($clientsJs);
+
         return $this->render('accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
             "clients" => $cr->findAll(),
         ]);
     }
+    
 }

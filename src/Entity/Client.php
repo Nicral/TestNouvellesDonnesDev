@@ -89,4 +89,9 @@ class Client
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->getId().'?'.$this->getPrenom().'?'.$this->getNom().'?'.$this->getClientPhoto().'?'.$this->getClientMessage();
+    }
 }
